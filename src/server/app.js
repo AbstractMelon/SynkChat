@@ -1,6 +1,6 @@
-const express = require('express');
-const connectDB = require('./utils/database');
-const errorHandler = require('./utils/errorHandler');
+const express = require("express");
+const connectDB = require("./utils/database");
+const errorHandler = require("./utils/errorHandler");
 
 const app = express();
 
@@ -11,9 +11,9 @@ connectDB();
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/messages', require('./routes/messageRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/messages", require("./routes/messageRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 // Error Handler Middleware
 app.use(errorHandler);
