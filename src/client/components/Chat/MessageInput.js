@@ -3,23 +3,28 @@ import React, { useState } from "react";
 const MessageInput = ({ sendMessage }) => {
     const [text, setText] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSend = () => {
         sendMessage(text);
         setText("");
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            handleSend();
+        }
+    };
+
     return (
-        <form onSubmit={handleSubmit} className="message-input">
+        <div className="message-input">
             <input
                 type="text"
-                placeholder="Type a message"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                required
+                onKeyPress={handleKeyPress}
+                placeholder="Type a message..."
             />
-            <button type="submit">Send</button>
-        </form>
+            <button onClick={handleSend}>Send</button>
+        </div>
     );
 };
 

@@ -4,9 +4,10 @@ const Sidebar = () => {
     return (
         <aside className="sidebar">
             <ul>
-                <li>Channel 1</li>
-                <li>Channel 2</li>
-                <li>Channel 3</li>
+                <li># general</li>
+                <li># random</li>
+                <li># tech-talk</li>
+                <li># memes</li>
             </ul>
         </aside>
     );
