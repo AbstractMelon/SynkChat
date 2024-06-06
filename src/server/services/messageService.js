@@ -5,5 +5,11 @@ exports.getMessages = async () => {
 };
 
 exports.createMessage = async (data) => {
-    return await Message.create(data);
+    return await Message.create({
+        user: data.user,
+        text: data.text,
+        serverId: data.serverId,
+        channelId: data.channelId
+    });
 };
+

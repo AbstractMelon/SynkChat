@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./utils/database");
 const errorHandler = require("./utils/errorHandler");
+const cors = require("cors");
 
 const app = express();
 
@@ -9,6 +10,11 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
+
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));

@@ -4,7 +4,6 @@
     height: 100vh;
     background-color: #36393f;
     color: #dcddde;
-    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .chat-container {
@@ -124,20 +123,57 @@
     color: white;
     width: 240px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    flex-grow: 1;
 }
 
 .sidebar li {
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar li:hover {
     background-color: #40444b;
+}
+
+.sidebar li svg {
+    margin-right: 10px;
+}
+
+.user-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #202225;
+    border-radius: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info svg {
+    margin-right: 10px;
+}
+
+.settings {
+    cursor: pointer;
 }
 
 .user-list {

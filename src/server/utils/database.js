@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/discord-clone", {
+        await mongoose.connect("mongodb://localhost:27017/database", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
