@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub issues](https://img.shields.io/github/issues/AbstractMelon/SynkChat)](https://github.com/AbstractMelon/SynkChat/issues)
-[![GitHub stars](https://img.shields.io/github/stars/AbstractMelon/SynkChat/)](https://github.com/AbstractMelon/SynkChat/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/AbstractMelon/SynkChat)](https://github.com/AbstractMelon/SynkChat/stargazers)
 
 ## Description
 This is a chat application built using [Next.js](https://nextjs.org/), designed to provide a seamless and interactive chat experience for users. It allows users to communicate with each other in real-time within a server or group.
