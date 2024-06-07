@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
+    const [usernameOrEmail, setUsernameOrEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post("/api/auth/login", {
-                email,
+                usernameOrEmail,
                 password,
             });
             console.log("Login Successful", response.data);
+            
+            const userInfo = {
+                username: response.data.user.username,
+                userId: response.data.user.userId,
+                token: response.data.token
+            };
+            
+            // Save user info object to local storage
+            localStorage.setItem("userInfo", JSON.stringify(userInfo));
+            
+            window.location.href = "/chat"
         } catch (error) {
             console.error("Login Failed", error.response.data);
         }
@@ -22,10 +33,10 @@ const Login = () => {
         <div className="login-container">
             <form onSubmit={handleSubmit}>
                 <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    type="text"
+                    placeholder="Username or Email"
+                    value={usernameOrEmail}
+                    onChange={(e) => setUsernameOrEmail(e.target.value)}
                     required
                 />
                 <input

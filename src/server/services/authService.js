@@ -25,7 +25,7 @@ exports.login = async (data) => {
         throw new Error("Invalid credentials");
     }
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
-        expiresIn: "1h",
+        expiresIn: "48h",
     });
     return token;
 };
