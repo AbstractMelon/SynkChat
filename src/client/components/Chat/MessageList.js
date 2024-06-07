@@ -4,18 +4,23 @@ import axios from "axios";
 const MessageList = () => {
     const [messages, setMessages] = useState([]);
 
-    /*
     useEffect(() => {
-        axios.get("http://localhost:5000/messages")
-            .then(response => {
-                setMessages(response.data);
-            })
-            .catch(error => {
-                console.error("Error fetching messages:", error);
-            });
+        const fetchMessages = () => {
+            axios.get("http://localhost:5000/api/messages")
+                .then(response => {
+                    setMessages(response.data);
+                })
+                .catch(error => {
+                    console.error("Error fetching messages:", error);
+                });
+        };
+    
+        fetchMessages();
+        const intervalId = setInterval(fetchMessages, 500);
+    
+        return () => clearInterval(intervalId);
     }, []);
-
-    */
+    
 
     return (
         <div className="message-list">

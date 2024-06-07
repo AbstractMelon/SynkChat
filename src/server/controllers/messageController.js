@@ -11,6 +11,8 @@ exports.getMessages = async (req, res) => {
 
 exports.createMessage = async (req, res) => {
     try {
+        console.log("Received message data:", req.body);
+
         const message = await messageService.createMessage(req.body);
         res.status(201).json(message);
     } catch (error) {

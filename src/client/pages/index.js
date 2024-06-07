@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className="landing-container">
             <header className="landing-header">
-                <h1 className="landing-logo">ENXT</h1>
+                <h1 className="landing-logo">Synk Chat</h1>
                 <nav className="landing-nav">
                     <Link href="/login"><p className="landing-nav-link">Login</p></Link>
                     <Link href="/register"><p className="landing-nav-link">Register</p></Link>
@@ -13,7 +13,7 @@ const Home = () => {
                 </nav>
             </header>
             <main className="landing-hero">
-                <h2 className="landing-hero-title">Welcome to ENXT!</h2>
+                <h2 className="landing-hero-title">Welcome to Synk Chat!</h2>
                 <p className="landing-hero-subtitle">I was bored and now this exsists!</p>
                 <div className="landing-button-container">
                     <Link href="/login"><p className="landing-button">Login</p></Link>
@@ -22,7 +22,7 @@ const Home = () => {
             </main>
             {/*
             <footer className="landing-footer">
-                &copy; 2024 ENXT. All rights reserved.
+                &copy; 2024 Synk Chat. All rights reserved.
             </footer>
             */}
         </div>

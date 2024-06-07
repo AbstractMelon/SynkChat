@@ -10,26 +10,25 @@ const MessageInput = ({ serverId, channelId }) => {
         const messageData = {
             user: "User", 
             text: text,
-            serverId: serverId,
-            channelId: channelId
+            serverId: serverId || "defaultServerId",
+            channelId: channelId || "defaultChannelId"
         };
 
-        /*
-        axios.post("http://localhost:5000/messages", messageData)
+        console.log("Sending message data:", messageData);
+
+        axios.post("http://localhost:5000/api/messages", messageData)
             .then(response => {
                 console.log("Message sent successfully:", response.data);
             })
             .catch(error => {
                 console.error("Error sending message:", error);
             });
-
-        */
         setText("");
     };
 
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            handleSend();
+            sendMessage();
         }
     };
 
