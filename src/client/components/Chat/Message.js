@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Message = ({ message }) => {
     return (
@@ -7,7 +7,7 @@ const Message = ({ message }) => {
                 <strong>{message.user}</strong>: {message.text}
             </p>
         </div>
-    );
-};
+    )
+}
 
-export default Message;
+export default Message

@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const Login = () => {
-    const [usernameOrEmail, setUsernameOrEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [usernameOrEmail, setUsernameOrEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
-            const response = await axios.post("/api/auth/login", {
+            const response = await axios.post('/api/auth/login', {
                 usernameOrEmail,
                 password,
-            });
-            console.log("Login Successful", response.data);
-            
+            })
+            console.log('Login Successful', response.data)
+
             const userInfo = {
                 username: response.data.user.username,
                 userId: response.data.user.userId,
-                token: response.data.token
-            };
-            
+                token: response.data.token,
+            }
+
             // Save user info object to local storage
-            localStorage.setItem("userInfo", JSON.stringify(userInfo));
-            
-            window.location.href = "/chat"
+            localStorage.setItem('userInfo', JSON.stringify(userInfo))
+
+            window.location.href = '/chat'
         } catch (error) {
-            console.error("Login Failed", error.response.data);
+            console.error('Login Failed', error.response.data)
         }
-    };
+    }
 
     return (
         <div className="login-container">
@@ -49,7 +49,7 @@ const Login = () => {
                 <button type="submit">Login</button>
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default Login;
+export default Login

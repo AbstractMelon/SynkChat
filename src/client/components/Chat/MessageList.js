@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const MessageList = () => {
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState([])
 
     useEffect(() => {
         const fetchMessages = () => {
-            axios.get("http://localhost:5000/api/messages")
-                .then(response => {
-                    setMessages(response.data);
+            axios
+                .get('http://localhost:5000/api/messages')
+                .then((response) => {
+                    setMessages(response.data)
                 })
-                .catch(error => {
-                    console.error("Error fetching messages:", error);
-                });
-        };
-    
-        fetchMessages();
-        const intervalId = setInterval(fetchMessages, 500);
-    
-        return () => clearInterval(intervalId);
-    }, []);
-    
+                .catch((error) => {
+                    console.error('Error fetching messages:', error)
+                })
+        }
+
+        fetchMessages()
+        const intervalId = setInterval(fetchMessages, 500)
+
+        return () => clearInterval(intervalId)
+    }, [])
 
     return (
         <div className="message-list">
@@ -39,7 +39,7 @@ const MessageList = () => {
                 </div>
             ))}
         </div>
-    );
-};
+    )
+}
 
-export default MessageList;
+export default MessageList

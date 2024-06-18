@@ -6,19 +6,19 @@
 }
 
 .landing-header {
-    position: relative; 
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 2rem;
     background-color: #7289da;
     background-size: cover;
-    background-position: center; 
-    z-index: 0; 
+    background-position: center;
+    z-index: 0;
 }
 
 .landing-header::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -31,7 +31,7 @@
 .landing-logo {
     color: #fff;
     font-size: 2.5rem;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .landing-nav {
@@ -53,7 +53,7 @@
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    background-image: url("../public/background.jpg");
+    background-image: url('../public/background.jpg');
     background-position: center;
     background-size: 100%;
 }

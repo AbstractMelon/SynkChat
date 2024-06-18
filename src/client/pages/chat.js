@@ -1,43 +1,48 @@
-import React, { useState, useEffect } from "react";
-import Header from "../components/Layout/Header";
-import Sidebar from "../components/Layout/Sidebar";
-import MessageList from "../components/Chat/MessageList";
-import MessageInput from "../components/Chat/MessageInput";
-import UserList from "../components/Layout/UserList";
-import axios from "axios";
+import React, { useState, useEffect } from 'react'
+import Header from '../components/Layout/Header'
+import Sidebar from '../components/Layout/Sidebar'
+import MessageList from '../components/Chat/MessageList'
+import MessageInput from '../components/Chat/MessageInput'
+import UserList from '../components/Layout/UserList'
+import axios from 'axios'
 // import "../styles/global.css";
 
 const Chat = () => {
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState([])
 
     const fetchMessages = () => {
-        axios.get("http://localhost:5000/api/messages")
-            .then(response => {
-                setMessages(response.data);
+        axios
+            .get('http://localhost:5000/api/messages')
+            .then((response) => {
+                setMessages(response.data)
             })
-            .catch(error => {
-                console.error("Error fetching messages:", error);
-            });
-    };
+            .catch((error) => {
+                console.error('Error fetching messages:', error)
+            })
+    }
 
     const sendMessage = (text) => {
-        if (text.trim() === "") return;
+        if (text.trim() === '') return
         const messageData = {
-            user: "Abstractmelon",
+            user: 'Abstractmelon',
             text: text,
-            serverId: "defaultServerId",
-            channelId: "defaultChannelId"
-        };
+            serverId: 'defaultServerId',
+            channelId: 'defaultChannelId',
+        }
 
-        axios.post("http://localhost:5000/api/messages", messageData)
-            .then(response => {
-                console.log("Message sent successfully:", response.data);
-                fetchMessages();
+        axios
+            .post('http://localhost:5000/api/messages', messageData)
+            .then((response) => {
+                console.log('Message sent successfully:', response.data)
+                fetchMessages()
             })
-            .catch(error => {
-                console.error("Error sending message:", error.response ? error.response.data : error.message);
-            });
-    };
+            .catch((error) => {
+                console.error(
+                    'Error sending message:',
+                    error.response ? error.response.data : error.message
+                )
+            })
+    }
 
     return (
         <div className="chat-page">
@@ -51,7 +56,7 @@ const Chat = () => {
                 <UserList />
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Chat;
+export default Chat

@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const Register = () => {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
-            const response = await axios.post("/api/auth/register", {
+            const response = await axios.post('/api/auth/register', {
                 username,
                 email,
                 password,
-            });
-            console.log("Registration Successful", response.data);
+            })
+            console.log('Registration Successful', response.data)
         } catch (error) {
-            console.error("Registration Failed", error.response.data);
+            console.error('Registration Failed', error.response.data)
         }
-    };
+    }
 
     return (
         <div className="register-container">
@@ -47,7 +47,7 @@ const Register = () => {
                 <button type="submit">Register</button>
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default Register;
+export default Register

@@ -1,36 +1,37 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import axios from "axios";
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 
 const MessageInput = ({ serverId, channelId }) => {
-    const [text, setText] = useState("");
+    const [text, setText] = useState('')
 
     const sendMessage = () => {
         const messageData = {
-            user: "User", 
+            user: 'User',
             text: text,
-            serverId: serverId || "defaultServerId",
-            channelId: channelId || "defaultChannelId"
-        };
+            serverId: serverId || 'defaultServerId',
+            channelId: channelId || 'defaultChannelId',
+        }
 
-        console.log("Sending message data:", messageData);
+        console.log('Sending message data:', messageData)
 
-        axios.post("http://localhost:5000/api/messages", messageData)
-            .then(response => {
-                console.log("Message sent successfully:", response.data);
+        axios
+            .post('http://localhost:5000/api/messages', messageData)
+            .then((response) => {
+                console.log('Message sent successfully:', response.data)
             })
-            .catch(error => {
-                console.error("Error sending message:", error);
-            });
-        setText("");
-    };
+            .catch((error) => {
+                console.error('Error sending message:', error)
+            })
+        setText('')
+    }
 
     const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            sendMessage();
+        if (e.key === 'Enter') {
+            sendMessage()
         }
-    };
+    }
 
     return (
         <div className="message-input">
@@ -41,9 +42,11 @@ const MessageInput = ({ serverId, channelId }) => {
                 onKeyPress={handleKeyPress}
                 placeholder="Type a message..."
             />
-            <button onClick={sendMessage}>Send <FontAwesomeIcon icon={faPaperPlane} /></button>
+            <button onClick={sendMessage}>
+                Send <FontAwesomeIcon icon={faPaperPlane} />
+            </button>
         </div>
-    );
-};
+    )
+}
 
-export default MessageInput;
+export default MessageInput

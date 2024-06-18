@@ -1,5 +1,5 @@
-import React from "react";
-import Register from "../components/Auth/Register";
+import React from 'react'
+import Register from '../components/Auth/Register'
 
 const RegisterPage = () => {
     return (
@@ -7,7 +7,7 @@ const RegisterPage = () => {
             <h1>Register</h1>
             <Register />
         </div>
-    );
-};
+    )
+}
 
-export default RegisterPage;
+export default RegisterPage

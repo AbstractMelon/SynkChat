@@ -1,5 +1,5 @@
-const User = require("../models/User");
+const User = require('../models/User')
 
 exports.getUsers = async () => {
-    return await User.find().select("-password");
-};
+    return await User.find().select('-password')
+}
